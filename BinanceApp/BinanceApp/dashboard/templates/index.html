@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="jumbotron text-center">
+      <h1>KRIPTIC</h1>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h2 class="text-center">1 MIN</h2>
+          <ul>
+            {% for coin in coins_1m %}
+            <li>{{ coin.symbol }} {{ coin.volume }}$ {{ coin.percent }}%</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2 class="text-center">5 MIN</h2>
+          <ul>
+            {% for coin in coins_5m %}
+            <li>{{ coin.symbol }} {{ coin.volume }}$ {{ coin.percent }}%</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2 class="text-center">15 MIN</h2>
+          <ul>
+            {% for coin in coins_15m %}
+            <li>{{ coin.symbol }} {{ coin.volume }}$ {{ coin.percent }}%</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h2 class="text-center">1 HOUR</h2>
+          <ul>
+            {% for coin in coins_1h %}
+            <li>{{ coin.symbol }} {{ coin.volume }}$ {{ coin.percent }}%</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script>
+      var tick = function () {
+        location.reload();
+      };
+      var s = setInterval(tick, 1000 * 60);
+    </script>
+  </footer>
+</html>
